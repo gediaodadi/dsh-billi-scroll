@@ -1,0 +1,19 @@
+{
+  "name": "dsh-billi-scroll",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "billi·scroll — 一个 B 站竖屏滑动信息流：一屏一个视频，滚轮 / 方向键切换，点开即可播放。",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  }
+}

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#06070c" />
+    <meta name="description" content="billi·scroll — B 站竖屏滑动信息流：一屏一个视频，滚轮 / 方向键切换，点开即播。" />
+    <title>billi·scroll — B 站竖屏信息流</title>
+    <link rel="preconnect" href="https://i0.hdslb.com" />
+    <link rel="preconnect" href="https://i1.hdslb.com" />
+    <link rel="preconnect" href="https://i2.hdslb.com" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23fb7299'/%3E%3Cpath d='M13 10.5v11L22 16z' fill='%23140b10'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <div class="progress" aria-hidden="true"><div class="progress__bar" id="progressBar"></div></div>
+
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="billi·scroll">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__text">billi<span class="brand__dot">·</span>scroll</span>
+      </a>
+
+      <nav class="tabs" role="tablist" aria-label="内容来源">
+        <button class="tab is-on" type="button" role="tab" aria-selected="true" data-source="popular">热门</button>
+        <button class="tab" type="button" role="tab" aria-selected="false" data-source="recommend">推荐</button>
+      </nav>
+
+      <div class="topbar__end">
+        <span class="counter" id="counter">—</span>
+
+        <button class="icon-btn" id="autoplayBtn" type="button" aria-pressed="true" aria-label="自动播放" title="自动播放">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M8 5.2v13.6L19 12z" fill="currentColor" />
+          </svg>
+          <span class="icon-btn__label">自动播放</span>
+        </button>
+
+        <button class="icon-btn" id="refreshBtn" type="button" aria-label="换一批" title="换一批 (R)">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 11a8 8 0 1 0-2.3 5.7" />
+            <path d="M20 4v6h-6" />
+          </svg>
+          <span class="icon-btn__label">换一批</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="boot" id="boot" hidden>
+      <span class="spinner" aria-hidden="true"></span>
+      <p class="boot__text">正在从 B 站取回画面…</p>
+    </div>
+
+    <main class="feed" id="feed">
+      <section class="feed-status" id="status" aria-live="polite"></section>
+    </main>
+
+    <p class="hint" id="hint">
+      <span><kbd>滚轮</kbd> / <kbd>↑</kbd><kbd>↓</kbd> 切换</span>
+      <span><kbd>空格</kbd> 播放</span>
+      <span><kbd>O</kbd> 去 B 站</span>
+    </p>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
